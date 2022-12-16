@@ -61,5 +61,6 @@ def lambda_handler(event, context):
 
     return "Done"
 
-
-# regions = ec2.describe_regions().get('Regions',[] )
+'''
+regions = ec2.describe_regions().get('Regions',[] )
+'''

@@ -14,20 +14,20 @@
 
     *TESTS
         # Get Patch Tuesday for the month
-    Get-PatchTuesday
+    Get-PatchDay
         # Is today Patch Tuesday?
-    (get-date).Day -eq (Get-PatchTuesday).day
-        # Get 5 days after path Tuesday
-    (Get-PatchTuesday).AddDays(5)
+    (get-date).Day -eq (Get-PatchDay).day
+        # Get 5 days after patch Tuesday
+    (Get-PatchDay).AddDays(5)
         # Get the 3rd wednesday of the month
-    Get-PatchTuesday -weekDay Thursday -findNthDay 3 
+    Get-PatchDay -weekDay Thursday -findNthDay 3 
         # Get the 3rd wednesday of particular month e.g July
-    Get-PatchTuesday -weekDay Thursday -findNthDay 3 -month 7
+    Get-PatchDay -weekDay Thursday -findNthDay 3 -month 7
 #>
 
 #-------------------{Execution Context}--------------------
 
-Function Get-PatchTuesday {
+Function Get-PatchDay {
     [CmdletBinding()]
     Param (
       [Parameter(position = 0)]
@@ -74,3 +74,5 @@ Function Get-PatchTuesday {
     $patchTuesday = $firstWeekDay.AddDays($dayOffset) 
     return $patchTuesday
 }
+
+

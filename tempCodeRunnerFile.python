@@ -1,0 +1,8 @@
+
+def square(num):
+    result = num * num
+    return result
+
+square(4);
+
+
